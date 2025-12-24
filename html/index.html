@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div *ngIf="subCategory === 'Own Hospital-VC'">
+          <div class="pages-style" id="pdfContent">
+            <div class="page1 page">
+              <div class="paragraph">
+                <img src="assets/pristyn-logos1.png" width="40" alt="image" id="pristyn-logo">
+              </div>
+              <div class="logo-info"></div>
+
+              <p class=" sub-heading"><u>CONSULTING AGREEMENT </u></p>
+
+              <div class="center-align">
+                <p class="bottom-zero sub-heading-next">
+                  This Agreement is made on<b> Date </b>
+                  <b>{{pristynContractDate | date: "d MMMM yyyy"}}</b>, by and between
+                </p>
+                 <br/>
+
+              </div>
+              <p class="paragraph bottom-zero ">
+                GHV Advanced Care Private Limited, a company registered under the Companies Act, 2013, (CIN
+                U85300HR2018PTC075460) having amongst others an office at Capital Cityscape, 3rd Floor, Sector 66, Gurugram, Haryana
+                122102 represented by its authorized signatory hereinafter referred to as <b>“The Company”,</b> which expression, unless
+                repugnant to the context or meaning thereof, shall mean and include its successors- in-interest and assigns of the <b>FIRST
+                PART</b>
+              </p>
+              <div class="center-align">
+                <h4 class="bottom-zero"><b>AND</b></h4>
+                <p class="paragraph top-zero">
+                  <b>{{pristynDocName}}({{pristynPanCardNumber}}),</b> having address at <b>{{pristynDoctorAddress}} </b>(hereinafter referred to as the<b> “Consultant” Second Part</b>).
+                </p>
+                 <!-- <br/> -->
+                  <p class="paragraph top-zero"> <b>WHEREAS</b>, the Consultant is a qualified and licensed medical practitioner and the Hospital desires to avail their professional
+                    services on a visiting basis, the parties agree as follows</p>
+              </div>
+
+              <div class="center-align">
+                <p class="paragraph top-zero"> <b>1. Scope of Services </b></p>
+                <p class="paragraph top-zero">The Consultant shall provide outpatient/inpatient consultation, diagnostics, procedures, follow-ups, and medical advice to
+                patients of the Hospital during pre-agreed timings/days. The Consultant shall not admit or treat patients independently
+                without Hospital authorization.</p>
+                 <p class="paragraph top-zero"> <b>2. Professional Independence </b></p>
+                <p class="paragraph top-zero">The Consultant shall perform services independently and shall not be considered an employee of the Hospital. No employer-
+                employee relationship is created. The Consultant may continue private practice outside hospital hours.</p>
+                <p class="paragraph top-zero"> <b>3. Timings & Availability </b></p>
+                <p class="paragraph top-zero">The Consultant shall be available at the Hospital as per mutually agreed schedule. Any changes must be communicated in
+                advance</p>
+                 <p class="paragraph top-zero"> <b>4.Remuneration</b></p>
+                 <p class="paragraph top-zero">The Consultant shall be paid</p>
+                 <div class="table1 vc-css-table">
+                <div class="table-row">
+                  <p class="table1-boxes "><b class="onVcCss">Engagement Mode</b></p>
+                  <p class="table1-boxes onVcCss">Visiting Consultant</p>
+                </div>
+
+                <div class="table-row-remuneration vcc-table-row-remuneration">
+                  <p class="table1-boxes onVcRemuneration"><b class="onVcCss">Remuneration</b></p>
+                  <p class="dynamic-text vcc-table-row-remuneration" [innerHTML]="contractDetails.remuneration"></p>
+                </div>
+              </div>
+              <p class="paragraph top-zero"> Payment shall be made monthly against an invoice raised.</p>
+
+              </div>
+
+              <p class="simple-line"></p>
+              <div class="paragraph page1-bottom">
+                <b class="first-text">GHV Advanced Care Private Limited</b>
+                <p class="middle-text top-zero footer-zero ">Capital Cityscape,3rd Floor,Sector 66,Golf Course Extension
+                  Road,Gurgaon - 122018
+                </p>
+                <b class="last-text "> <a href="mailto: info@pristyncare.com">info@pristyncare.com</a> &nbsp;
+                  www.pristyncare.com CIN U85300HR2018PTC075460</b>
+              </div>
+
+            </div>
+
+            <div class="page">
+               <p class="paragraph top-zero"><b>5. Licensing & Compliance</b></p>
+              <p class="paragraph top-zero">
+                The Consultant affirms holding valid medical registration and
+                necessary qualifications. The Consultant shall comply with all
+                applicable laws, including the Clinical Establishments Act, MCI/
+                NMC guidelines, PCPNDT, Bio-Medical Waste, and data protection
+                laws.
+              </p>
+             <p  class="paragraph top-zero"> <b>6. Medical Records & Confidentiality </b></p>
+                <p class="paragraph top-zero">The Consultant shall maintain proper patient records as per Hospital protocols. All records shall remain Hospital property.
+                The Consultant shall maintain strict confidentiality of all patient information, medical records, proprietary processes,
+                treatment protocols, business data, and any other confidential information of the Hospital accessed during the course of
+                services. The Consultant shall not disclose, share, or use such information for any purpose other than providing medical
+                services at the Hospital. This obligation shall survive the termination of this Agreement.</p>
+                <p class="paragraph top-zero"> <b>7. Intellectual Property Rights (IPR): </b></p>
+                <p class="paragraph top-zero">Any clinical data, research, treatment protocols, medical content, reports, publications, or inventions developed or created
+                by the Consultant in connection with or using the facilities, resources, or data of the Hospital shall be the sole property of
+                the Hospital, unless otherwise agreed in writing. The Consultant shall not claim any rights over such intellectual property
+                without prior written consent of the Hospital.</p>
+                <p class="paragraph top-zero"> <b>8. Malpractice & Indemnity </b></p>
+                 <p class="paragraph top-zero">The Consultant shall hold a valid professional indemnity insurance policy of Rs. 50 lakhs and indemnify the Hospital against
+                any claims, negligence, or misconduct arising from services rendered.</p>
+                 <p class="paragraph top-zero"> <b>9. Contract period and Termination </b></p>
+                <p class="paragraph top-zero">This contract is effective from <b>{{contractDateDetails | date: "d MMMM yyyy"}} </b> for a period of 3 Years and shall be renewed on mutual agreement  <br/>This Agreement may be terminated by either party with 30 days’ written notice. Immediate termination shall apply in cases
+                of gross misconduct, negligence, or breach of law.</p>
+                <p class="paragraph top-zero"> <b>10. Miscellaneous </b></p>
+                <p class="paragraph top-zero">This Agreement is governed by Indian laws. Disputes, if any, shall be subject to jurisdiction of courts at Gurugram. IN
+                WITNESS WHEREOF, the parties have executed this Agreement on the day, month, and year first written above</p>
+              <div class="table1 vcCss">
+                <div class="table-row">
+                 <p class="table1-boxes"><b>Location</b></p>
+                  <p class="table1-boxes"> {{contractDetails &&
+                    contractDetails.city?contractDetails.city:'NA'}}</p>
+                </div>
+                <div class="table-row ">
+                  <p class="table1-boxes"> Specialty</p>
+                  <p class="table1-boxes">{{contractDetails.category}}</p>
+                </div>
+                <div class="table-row">
+                  <p class="table1-boxes">Professional Activities</p>
+                  <p class="table1-boxes">Daily OPDs, IPDs</p>
+                </div>
+                <div class="table-row">
+                  <p class="table1-boxes">Working Timings</p>
+                   <p class="table1-boxes">{{ contractDetails && contractDetails.workingTimings}}</p>
+                </div>
+                <div class="table-row">
+                  <p class="table1-boxes">Infrastructure Equipment</p>
+                  <p class="table1-boxes">All provided</p>
+                </div>
+              </div>
+               <div class="table1 vcCss">
+                <div class="table-row">
+                  <p class="table1-boxes">For GHV Advanced Care Private Limited</p>
+                  <p class="table1-boxes">Accepted By</p>
+                </div>
+                <div class="table-row big-box">
+                  <p class="table1-boxes"> <img src="assets/Signature.png" alt=""></p>
+
+                  <p class="table1-boxes cursive-text">{{singleDocDetails && singleDocDetails.status &&
+                    singleDocDetails.status === 'VERIFIED'?doctorName:''}}</p>
+                </div>
+                <div class="table-row">
+                  <p class="table1-boxes">Anjan Das </p>
+                  <p class="table1-boxes">{{pristynDocName}}</p>
+                </div>
+                <div class="table-row">
+                  <p class="table1-boxes">(Vice President-HR)</p>
+                  <p class="table1-boxes">Consultant</p>
+                </div>
+                <div class="table-row">
+                  <p class="table1-boxes"></p>
+                  <p class="table1-boxes">Date:{{singleDocDetails && singleDocDetails.docSignDate &&
+                    singleDocDetails.status &&
+                    singleDocDetails.status === 'VERIFIED'?
+                    (singleDocDetails.docSignDate | date: "dd/MM/yyyy | hh:mm a")+" (OTP Verified)":''}}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+          </div>
+  </body>
+</html>
