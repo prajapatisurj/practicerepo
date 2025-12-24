@@ -120,22 +120,22 @@
 
 // console.log(sumNaturalNumbers(10)); // 55
 
-function permuation(str) {
-  let res = [];
-  function permute(curr, remaining) {
-    if (remaining.length === 0) {
-      res.push(curr);
-      return;
-    }
-    for (let i = 0; i < remaining.length; i++) {
-      permute(
-        curr + remaining[i],
-        remaining.slice(0, i) + remaining.slice(i + 1)
-      );
-    }
-  }
-  permute("", str);
-  return res;
-}
+// function permuation(str) {
+//   let res = [];
+//   function permute(curr, remaining) {
+//     if (remaining.length === 0) {
+//       res.push(curr);
+//       return;
+//     }
+//     for (let i = 0; i < remaining.length; i++) {
+//       permute(
+//         curr + remaining[i],
+//         remaining.slice(0, i) + remaining.slice(i + 1)
+//       );
+//     }
+//   }
+//   permute("", str);
+//   return res;
+// }
 
-console.log(permuation("xy"));
+// console.log(permuation("xy"));
