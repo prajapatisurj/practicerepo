@@ -16,7 +16,29 @@
 //   }
 // });
 
-// console.log(result);
+// console.log(result);class ErrorBoundary extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { hasError: false };
+//   }
+
+//   static getDerivedStateFromError(error) {
+//     return { hasError: true };
+//   }
+
+//   componentDidCatch(error, info) {
+//     console.log("Error:", error);
+//     console.log("Info:", info);
+//   }
+//   render() {
+//     if (this.state.hasError) {
+//       return <h1>Something went wrong.</h1>;
+//     }
+//     return this.props.children;
+//   }
+// }
+
+// export default ErrorBoundary;
 
 // // is pailndrome
 
@@ -194,29 +216,29 @@
 // };
 
 // didCatch method in react component
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+// class ErrorBoundary extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { hasError: false };
+//   }
 
-  static getDerivedStateFromError(error) {
-    return { hasError: true };
-  }
+//   static getDerivedStateFromError(error) {
+//     return { hasError: true };
+//   }
 
-  componentDidCatch(error, info) {
-    console.log("Error:", error);
-    console.log("Info:", info);
-  }
-  render() {
-    if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
-    }
-    return this.props.children;
-  }
-}
+//   componentDidCatch(error, info) {
+//     console.log("Error:", error);
+//     console.log("Info:", info);
+//   }
+//   render() {
+//     if (this.state.hasError) {
+//       return <h1>Something went wrong.</h1>;
+//     }
+//     return this.props.children;
+//   }
+// }
 
-export default ErrorBoundary;
+// export default ErrorBoundary;
 
 // const mainObj = {
 //   name: "suraj",
@@ -232,8 +254,13 @@ export default ErrorBoundary;
 // {/* <></> vs react fragment */}
 // explain the difference between using <> </> and <React.Fragment></React.Fragment>
 
-// react fragments allow you to group a list of children without adding extra nodes to the DOM. There are two ways to use fragments in React: the shorthand syntax <> </> and the full syntax <React.Fragment></React.Fragment>.
-// <> </> is a shorter way to declare fragments and is more concise. However, it does not support key attributes or any other props. This means that if you need to assign a key to a fragment (for example, when rendering a list of items), you must use the full <React.Fragment>
+// react fragments allow you to group a list of children without
+//  adding extra nodes to the DOM. There are two ways to use fragments 
+// in React: the shorthand syntax <> </> and the full syntax <React.Fragment></React.Fragment>.
+// <> </> is a shorter way to declare fragments and is more concise.
+// However, it does not support key attributes or any other props.
+//  This means that if you need to assign a key to a fragment
+//  (for example, when rendering a list of items), you must use the full <React.Fragment>
 
 // process.nextTick(() => {
 //   console.log('Next Tick Callback');
@@ -394,3 +421,43 @@ export default ErrorBoundary;
 // }
 
 // resolver(); 
+
+
+// import React, { useState, useEffect } from 'react';
+
+// export default function App() {
+//   const [user, setUser] = useState([]);
+//   const [filterVal, setFilterVal] = useState([]);
+//   const [input, setInput] = useState('');
+
+//   const fetchData = () => {
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setUser(data), setFilterVal(data);
+//       });
+//   };
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       const allFilerVal = user.filter((item) =>
+//         item.name.toLowerCase().includes(input.toLowerCase())
+//       );
+//       setFilterVal(allFilerVal);
+//     }, 500);
+//     return () => {
+//       clearTimeout(timer);
+//     };
+//   }, [input, filterVal]);
+//   return (
+//     <>
+//       <input value={input} onChange={(e) => setInput(e.target.value)} />
+
+//       {filterVal.map((item,index)=>(
+//         <p>{item.name}</p>
+//       ))}
+//     </>
+//   );
+// }
